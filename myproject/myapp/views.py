@@ -44,9 +44,9 @@ def product_detail(request):
 def item(request):
     product = Product.objects.all()
     context = {'product':product}
-    return render(request,'myapp/item.html',context)
+    return render(request,'item.html',context)
 
 def details(request):
     product = Product.objects.all()
     context = {'product':product}
-    return render(request,'myapp/details.html',context)
+    return render(request,'details.html',context)
