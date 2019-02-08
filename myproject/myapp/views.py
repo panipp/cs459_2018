@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from qr_code.qrcode.utils import QRCodeOptions
 
 # Create your views here.
 from django.http import HttpResponse
@@ -10,7 +9,7 @@ def current_datetime(request):
     html = "<html><body>It is now %s.</body></html>" % now
     return HttpResponse(html)
 
-def list_product(request):
+def product_list(request):
     num=1
     text = "<style type=\"text/css\">body{background: #ead6bd;color: #00142f;font-size: 40px;}#head{padding: 60px;text-align: center;background: #504e63;color: white;font-size: 50px;}</style><div id=\"head\">List of Product</div>"
     for i in Product.objects.all():
@@ -41,3 +40,13 @@ def product_detail(request):
         <script type=\"text/javascript\"> new QRCode(document.getElementById(\""+str(i.name)+"\"),{ text:\""+str(i.name)+"\",width:100,height:100});</script></div>"
         num+=1
     return HttpResponse(detail)
+
+def item(request):
+    product = Product.objects.all()
+    context = {'product':product}
+    return render(request,'myapp/item.html',context)
+
+def details(request):
+    product = Product.objects.all()
+    context = {'product':product}
+    return render(request,'myapp/details.html',context)

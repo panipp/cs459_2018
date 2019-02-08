@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List of Product</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+        <link rel="stylesheet" href="{% static '/css/main.css' %}">
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+        <div class="uk-cover-container uk-height-medium" id="head">
+                
+                    <video autoplay loop muted playsinline uk-cover >
+                        <source src="/media/bg.mp4" type="video/mp4">
+                    </video>
+                    <div class="content">
+                        <h1><i>List of Product</i></h1>
+                    </div>
+                </div>
+        <div style="padding-left: 45%;padding-top: 5%;">
+            <ol>
+                {% for i in product %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </body>
+</html>

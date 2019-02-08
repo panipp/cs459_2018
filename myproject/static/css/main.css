@@ -1,0 +1,47 @@
+html{
+    background: #E1D1C4;
+    color: #00142f;
+    font-size: 30px;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 150%;
+    padding: 6.5%;
+    text-shadow: 2px 2px 4px #000000;
+}
+#head{
+    text-align: center;
+    background: #504e63;
+    color: white;
+    font-size: 50px;
+}
+.content {
+    position: relative;
+    text-align: center;
+    background: transparent;
+}
+.block{
+    border: 2.5px solid #F7EEE7;
+    border-radius: 10px;
+    padding: 2%;
+    display: block;
+    background: #a88661;
+    color: white;
+    text-align: center;
+    line-height: 25pt;
+}
+.uk-grid>.uk-grid-margin{
+    margin-top:0px;
+}
+
+.container {
+    width: 90%;
+}
+.uk-grid {
+    margin-left: -15px;
+    margin-right: 20px;
+}
+.uk-margin-top {
+    margin-top: 20px!important;
+}
