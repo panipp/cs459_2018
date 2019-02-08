@@ -50,3 +50,8 @@ def details(request):
     product = Product.objects.all()
     context = {'product':product}
     return render(request,'details.html',context)
+
+def test(request):
+    product = Product.objects.all()
+    context = {'product':product}
+    return render(request,'testbase.html',context)

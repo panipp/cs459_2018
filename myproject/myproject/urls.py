@@ -26,4 +26,5 @@ urlpatterns = [
     path('product_detail/',views.product_detail,name='product_detail'),
     path('item/',views.item,name='item'),
     path('details/',views.details,name='details'),
+     path('tb/',views.test,name='tb'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
