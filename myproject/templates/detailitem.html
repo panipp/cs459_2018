@@ -8,14 +8,9 @@
         <h1><i>Product Details</i></h1>
     </div>
 </div>
-{{ name }}
-  <ul>
-    {% for i in object_list %}
-      <li>
-          <a href="/id/{{i.pk}}"> {{ i.name }} </a> {{ i.category }} {{i.price}} {{ i.image }}
-      </li>
-      {% empty %}
-      <li> No article yrt </li>
-    {% endfor %}
-  </ul>
+<h1>{{ object.name }}</h1>
+<img src="/media/{{ object.image }}" >
+<p>{{ object.category }}</p>
+<p>{{ object.price }}</p>
+
 {% endblock %}

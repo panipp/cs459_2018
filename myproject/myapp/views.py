@@ -5,6 +5,8 @@ from django.http import HttpResponse
 import datetime
 from .models import Product
 from django.views import generic
+from django.views.generic.detail import DetailView
+
 
 def current_datetime(request):
     now = datetime.datetime.now()
@@ -61,10 +63,20 @@ def test(request):
 class ProductListView(generic.ListView):
     model = Product
     template_name = 'listitem.html'
-    queryset = Product.objects.filter(category='V')
+    queryset = Product.objects.all()
+    # queryset = Product.objects.filter(category='V')
+    # paginate_by = 4
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get the context
         context = super(ProductListView, self).get_context_data(**kwargs)
         # Create any data and add it to the context
         context['name'] = 'Hi'
+        return context
+
+class ProductDetailView(DetailView):
+
+    model = Product
+    template_name = 'detailitem.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         return context

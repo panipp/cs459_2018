@@ -19,6 +19,8 @@ from myapp import views
 from django.conf import settings
 from django.conf.urls.static import static
 from myapp.views import ProductListView
+from myapp.views import ProductDetailView
+
 
 
 urlpatterns = [
@@ -29,5 +31,6 @@ urlpatterns = [
     path('item/',views.item,name='item'),
     path('details/',views.details,name='details'),
     path('tb/',views.test,name='tb'),
-    path('',views.ProductListView.as_view(),name='Product_list2')
+    path('glist/',ProductListView.as_view(),name='product-genericlist'),
+    path('id/<int:pk>/', ProductDetailView.as_view(), name='product-genericdetail'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
