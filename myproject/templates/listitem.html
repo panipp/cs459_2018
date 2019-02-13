@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="uk-cover-container uk-height-medium" id="head">
+    <video autoplay loop muted playsinline uk-cover >
+        <source src="/media/bg.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <h1><i>Product Details</i></h1>
+    </div>
+</div>
+{{ name }}
+  <ul>
+    {% for i in object_list %}
+      <li>
+        {{ i.name }} {{ i.category }} {{i.price}} {{ i.image }}
+      </li>
+      {% empty %}
+      <li> No article yrt </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -18,6 +18,8 @@ from django.urls import path
 from myapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from myapp.views import ProductListView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +28,6 @@ urlpatterns = [
     path('product_detail/',views.product_detail,name='product_detail'),
     path('item/',views.item,name='item'),
     path('details/',views.details,name='details'),
-     path('tb/',views.test,name='tb'),
+    path('tb/',views.test,name='tb'),
+    path('',views.ProductListView.as_view(),name='Product_list2')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
