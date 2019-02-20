@@ -6,12 +6,16 @@ class Customer(models.Model):
     lastname = models.CharField(max_length=50)
     dob = models.DateField()
     tel = models.CharField(max_length=20)
+    def __str__(self):
+        return f"{self.firstname} {self.lastname}"
 
 class Car(models.Model):
     name = models.CharField(max_length=20)
     brand = models.CharField(max_length=20)
     purchasing_date = models.DateField()
     price = models.DecimalField(max_digits=10,decimal_places=2)
+    def __str__(self):
+        return f"{self.brand} {self.name}"
 
 class Rent(models.Model):
     start = models.DateField()

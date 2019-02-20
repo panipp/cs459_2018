@@ -23,6 +23,6 @@ class RentAdmin (admin.ModelAdmin):
     fields = ('start', 'stop', 'cost', 'customer', 'car')
     list_display = ('id', 'start', 'stop', 'cost', 'customer', 'car')
     list_filter = ('start', 'stop', 'cost', 'customer', 'car')
-    list_editable = ('start', 'stop', 'cost', 'customer', 'car')
+    # list_editable = ('start', 'stop', 'cost', 'customer', 'car')
 
 admin.site.register(Rent, RentAdmin)
